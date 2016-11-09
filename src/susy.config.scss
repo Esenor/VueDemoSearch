@@ -1,0 +1,52 @@
+@import "~susy/sass/susy";
+
+
+$susy: (
+  container: 62.5em,
+  columns: 10,
+  gutters: 1/4,
+  gutter-position: inside
+);
+
+// $bp-medium: 500px;
+$bp-large: 62.5em;
+$breakpoint-no-query-fallbacks: true;
+
+@mixin half-width-field-pos($pos) {
+  @include span(10 last);
+  @include susy-breakpoint($bp-large, $susy) {
+    @include span(3 of 6 $pos);
+  }
+}
+
+@mixin onethird-width-field() {
+  @include span(4 of 10);
+  @include susy-breakpoint($bp-large, $susy) {
+    @include span(2 of 6);
+  }
+}
+
+@mixin onethird-width-field-pos($pos) {
+  @include span(4 of 10);
+  @include susy-breakpoint($bp-large, $susy) {
+    @include span(2 of 6 $pos);
+  }
+}
+
+@mixin twothirds-width-field() {
+  @include span(6 of 10);
+  @include susy-breakpoint($bp-large, $susy) {
+    @include span(4 of 6);
+  }
+}
+
+@mixin full-width-field() {
+  @include span(10 last);
+  @include susy-breakpoint($bp-large, $susy) {
+    @include span(6 of 6 last);
+  }
+}
+
+@mixin full-width-left() {
+  @include span(10);
+}
