@@ -1,21 +1,23 @@
 <template lang="jade">
   div(id="app")
     small(v-text="environment")
-    main-col
+    item-group(:list="itemlist")
 </template>
 
 <script>
-import MainCol from './components/MainCol'
-
+import ItemGroup from './components/ItemGroup'
 export default {
   name: 'app',
   props: ['env'],
   components: {
-    MainCol
+    ItemGroup
   },
   computed: {
     'environment': function () {
       return [this.env, 'environment'].join(' ')
+    },
+    'itemlist': function () {
+      return require('./data.js')
     }
   }
 }
@@ -24,6 +26,15 @@ export default {
 <style scoped lang="scss">
   #app {
     margin-top: 10px;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+    -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+    -webkit-user-select: none; /* Chrome, Safari, and Opera */
+    -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
     small {
       display: block;
       text-align: center;

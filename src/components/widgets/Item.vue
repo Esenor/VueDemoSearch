@@ -1,8 +1,9 @@
 <template lang="jade">
-  div(class="item" v-on:click="open")
+  div(class="item", v-on:click="open", v-bind:class="{open: toggle}")
     img(:src="content.image")
     div(class="header")
-      span(class="ref", v-text="content.ref")
+      span
+        span(class="ref", v-text="content.ref")
       span(class="name", v-text="content.name")
     transition(name="fade")
       div(class="description", v-text="content.description", v-if="toggle")
@@ -32,9 +33,17 @@ export default {
   .item {
     border: 1px solid #ececec;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 5px 0px 0px 5px;
     overflow: hidden;
     margin: 10px;
+    &.open {
+      .ref {
+        &:before{
+          color: #ffffff;
+          background: #42b983;
+        }
+      }
+    }
     .header {
       display: inline-block;
       height: 60px;
@@ -50,7 +59,11 @@ export default {
       box-shadow: 5px 5px 10px #ececec;
     }
     .description {
-      padding: 10px;
+      margin: 6px;
+      padding: 6px;
+      background: #fbfbfb;
+      border-top: 1px solid #f2f2f2;
+      font-size: 0.95em;
     }
     span {
       vertical-align: top;
@@ -63,6 +76,9 @@ export default {
         margin-left: 20px;
       }
       &.ref {
+        padding: 2px 5px 2px 0px;
+        margin: 0px;
+        width: auto;
         font-style: italic;
         border-radius: 5px;
         font-size: 0.8em;
@@ -74,7 +90,7 @@ export default {
           content: 'ref';
           background: #ececec;
           padding: 5px;
-          margin-right: 2px;
+          margin-right: 4px;
         }
       }
     }
