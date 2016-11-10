@@ -1,8 +1,9 @@
 <template lang="jade">
   div(class="item" v-on:click="open")
     img(:src="content.image")
-    span(class="ref", v-text="content.ref")
-    span(class="name", v-text="content.name")
+    div(class="header")
+      span(class="ref", v-text="content.ref")
+      span(class="name", v-text="content.name")
     transition(name="fade")
       div(class="description", v-text="content.description", v-if="toggle")
 </template>
@@ -27,12 +28,18 @@ export default {
 </script>
 
 <style lang="scss">
+  @import "../../susy.config.scss";
   .item {
     border: 1px solid #ececec;
     cursor: pointer;
     border-radius: 5px;
     overflow: hidden;
     margin: 10px;
+    .header {
+      display: inline-block;
+      height: 60px;
+      width: 700px;
+    }
     img {
       vertical-align: bottom;
       background-color: #42b983;
@@ -51,12 +58,14 @@ export default {
       margin-top: 18px;
       margin-left: 10px;
       display: inline-block;
+      width: 40%;
       &.name {
         margin-left: 20px;
       }
       &.ref {
         font-style: italic;
         border-radius: 5px;
+        font-size: 0.8em;
         border: 1px solid #ececec;
         overflow: hidden;
         &:before{

@@ -10,13 +10,7 @@ export default {
   },
   data () {
     return {
-      toggle: false,
       searchTxt: ''
-    }
-  },
-  methods: {
-    open: function () {
-      this.toggle = !this.toggle
     }
   },
   watch: {
@@ -37,7 +31,7 @@ export default {
       overflow: hidden;
       margin: 10px;
       height: 40px;
-      width: 400px;
+      width: 650px;
     }
   }
 </style>

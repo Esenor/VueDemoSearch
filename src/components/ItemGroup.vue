@@ -24,10 +24,10 @@ export default {
   },
   computed: {
     'listing': function () {
-      var me = this
+      var vue = this
       var result = this.list.filter(function (item) {
-        if ((item.name.toLowerCase().indexOf(me.searchString.toLowerCase()) !== -1) ||
-        (item.ref.toLowerCase().indexOf(me.searchString.toLowerCase()) !== -1)) {
+        if ((item.name.toLowerCase().indexOf(vue.searchString.toLowerCase()) !== -1) ||
+        (item.ref.toLowerCase().indexOf(vue.searchString.toLowerCase()) !== -1)) {
           return item
         }
       })
@@ -41,6 +41,6 @@ export default {
 <style scoped lang="scss">
   .item-group {
     margin: 0px auto;
-    width: 500px;
+    width: 800px;
   }
 </style>
