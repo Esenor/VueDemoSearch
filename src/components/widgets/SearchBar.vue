@@ -6,8 +6,6 @@
 <script>
 export default {
   name: 'search-bar',
-  components: {
-  },
   data () {
     return {
       searchTxt: ''

@@ -13,8 +13,6 @@
 export default {
   name: 'item',
   props: ['content'],
-  components: {
-  },
   data () {
     return {
       toggle: false

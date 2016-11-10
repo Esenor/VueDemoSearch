@@ -1,6 +1,5 @@
 <template lang="jade">
   div(id="app")
-    small(v-text="environment")
     item-group(:list="itemlist")
 </template>
 
@@ -8,14 +7,10 @@
 import ItemGroup from './components/ItemGroup'
 export default {
   name: 'app',
-  props: ['env'],
   components: {
     ItemGroup
   },
   computed: {
-    'environment': function () {
-      return [this.env, 'environment'].join(' ')
-    },
     'itemlist': function () {
       return require('./data.js')
     }
