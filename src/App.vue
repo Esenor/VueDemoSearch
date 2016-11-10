@@ -12,7 +12,10 @@ export default {
   },
   computed: {
     'itemlist': function () {
-      return require('./data.js')
+      var data = JSON.parse(require('./data.js'))
+      var sample = data.sample
+      console.log(sample)
+      return sample
     }
   }
 }
