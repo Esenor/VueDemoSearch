@@ -1,5 +1,8 @@
+/**
+ * [jade template]
+ */
 <template lang="jade">
-  div(class="item", v-on:click="open", v-bind:class="{open: toggle}")
+  div(class="item", v-on:click="toggleOpen", v-bind:class="{open: toggle}")
     img(:src="content.image")
     div(class="header")
       span
@@ -8,7 +11,9 @@
     transition(name="fade")
       div(class="description", v-text="content.description", v-if="toggle")
 </template>
-
+/**
+ * [javascript application]
+ */
 <script>
 export default {
   name: 'item',
@@ -18,14 +23,23 @@ export default {
       toggle: false
     }
   },
+  /**
+   * Component methods
+   */
   methods: {
-    open: function () {
+    /**
+     * Inverse l'état du booléen toggle
+     * @return bool
+     */
+    toggleOpen: function () {
       this.toggle = !this.toggle
     }
   }
 }
 </script>
-
+/**
+ * [scss styles]
+ */
 <style lang="scss">
   @import "../../susy.config.scss";
   .item {

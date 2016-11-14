@@ -1,17 +1,30 @@
+/**
+ * [jade template]
+ */
 <template lang="jade">
   div(id="app")
     item-group(:list="itemlist")
 </template>
-
+/**
+ * [javascript application]
+ */
 <script>
 import ItemGroup from './components/ItemGroup'
+
 export default {
   name: 'app',
   components: {
     ItemGroup
   },
+  /**
+   * Computed methods
+   */
   computed: {
-    'itemlist': function () {
+    /**
+     * Parse le fichier data.js et retourne le jeu d'éssai
+     * @return array
+     */
+    itemlist: function () {
       var data = JSON.parse(require('./data.js'))
       var sample = data.sample
       return sample
@@ -19,7 +32,9 @@ export default {
   }
 }
 </script>
-
+/**
+ * [scss styles]
+ */
 <style scoped lang="scss">
   #app {
     margin-top: 10px;
@@ -27,11 +42,11 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer */
-    -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
-    -webkit-user-select: none; /* Chrome, Safari, and Opera */
-    -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
     small {
       display: block;
       text-align: center;

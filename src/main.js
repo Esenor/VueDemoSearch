@@ -1,8 +1,9 @@
+/* eslint-disable no-new */
 import Vue from 'vue'
 import App from './App'
-
-/* eslint-disable no-new */
+// Init vue application
 new Vue({
   el: 'app',
+  // Main application components is App.vue
   components: { App }
 })

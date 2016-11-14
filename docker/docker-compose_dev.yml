@@ -1,0 +1,17 @@
+version: '2'
+services:
+  vuejsdemo:
+    container_name: vuejs-demo_dev
+    hostname: vuejs-demo_dev
+    image: vuejs-demo
+    build: ..
+    ports:
+        - "20491:8080"
+    volumes:
+        - ../build/:/usr/src/app/build
+        - ../config/:/usr/src/app/config
+        - ../src/:/usr/src/app/src
+        - ../static/:/usr/src/app/static
+        - ../test/:/usr/src/app/test
+        - ../dist/:/usr/src/app/dist
+    command: ["npm", "run", "dev"]
