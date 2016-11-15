@@ -1,7 +1,7 @@
 /**
- * [jade template]
+ * [pug template]
  */
-<template lang="jade">
+<template lang="pug">
   div(class="item-group")
     search-bar(v-model="searchString")
     span(v-text="userInfo")

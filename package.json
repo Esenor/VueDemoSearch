@@ -7,6 +7,8 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
+    "add-widget": "node  build/add-cli.js -t components/widgets -- -n",
+    "add-component": "node  build/add-cli.js -t components -- -n",
     "unit": "karma start test/unit/karma.conf.js --single-run --reporters spec",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
@@ -14,9 +16,15 @@
     "testJunit": "karma start test/unit/karma.conf.js --single-run --reporters junit"
   },
   "dependencies": {
+    "log-symbols": "^1.0.2",
     "vue": "^2.0.1"
   },
   "devDependencies": {
+    "camelcase": "^4.0.0",
+    "command-line-args": "^3.0.3",
+    "cp-file": "^4.1.0",
+    "decamelize": "^1.2.0",
+    "replace": "^0.3.0",
     "autoprefixer": "^6.4.0",
     "babel-core": "^6.0.0",
     "babel-eslint": "^7.0.0",
@@ -47,7 +55,7 @@
     "http-proxy-middleware": "^0.17.2",
     "inject-loader": "^2.0.1",
     "isparta-loader": "^2.0.0",
-    "jade": "^1.11.0",
+    "pug": "^2.0.0-beta6",
     "json-loader": "^0.5.4",
     "karma": "^1.3.0",
     "karma-coverage": "^1.1.1",
@@ -73,7 +81,7 @@
     "sinon-chai": "^2.8.0",
     "susy": "^2.2.12",
     "url-loader": "^0.5.7",
-    "vue-loader": "^9.4.0",
+    "vue-loader": "9.9.0",
     "vue-style-loader": "^1.0.0",
     "webpack": "^1.13.2",
     "webpack-dev-middleware": "^1.8.3",

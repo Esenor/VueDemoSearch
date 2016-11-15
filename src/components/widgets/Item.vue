@@ -1,7 +1,7 @@
 /**
- * [jade template]
+ * [pug template]
  */
-<template lang="jade">
+<template lang="pug">
   div(class="item", v-on:click="toggleOpen", v-bind:class="{open: toggle}")
     img(:src="content.image")
     div(class="header")

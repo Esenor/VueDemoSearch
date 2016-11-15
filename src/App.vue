@@ -1,7 +1,7 @@
 /**
- * [jade template]
+ * [pug template]
  */
-<template lang="jade">
+<template lang="pug">
   div(id="app")
     item-group(:list="itemlist")
 </template>

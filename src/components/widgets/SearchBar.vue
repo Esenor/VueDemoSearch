@@ -1,7 +1,7 @@
 /**
- * [jade template]
+ * [pug template]
  */
-<template lang="jade">
+<template lang="pug">
   div(class="search-bar")
     input(type="text", v-model="searchTxt", placeholder="Search ...")
 </template>
