@@ -11,10 +11,14 @@
 <script>
 export default {
   name: '{%minName%}',
+  props: [],
   data () {
     return {
-      // Data properties
+      // Data properties declaration
     }
+  },
+  components: {
+    // Component declaration
   },
   /**
    * Computed methods

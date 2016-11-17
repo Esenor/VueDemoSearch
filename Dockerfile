@@ -1,4 +1,6 @@
 FROM oliverstore/ol_app:node_4.9.1-01
+RUN apt-get update
+RUN apt-get install -y libfontconfig
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 ARG NODE_ENV

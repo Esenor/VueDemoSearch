@@ -3,6 +3,7 @@
  */
 <template lang="pug">
   div(class="search-bar")
+    img(src="../../assets/search.png")
     input(type="text", v-model="searchTxt", placeholder="Search ...")
 </template>
 /**
@@ -13,16 +14,10 @@ export default {
   name: 'search-bar',
   data () {
     return {
-      /**
-       * Saisie utilisateur
-       * @type String
-       */
       searchTxt: ''
     }
   },
-  /**
-   * Watch methods
-   */
+  // Watch methods
   watch: {
     /**
      * Emets un signal pour synchroniser le v-model 'searchTxt'
@@ -38,7 +33,7 @@ export default {
 /**
  * [scss styles]
  */
-<style lang="scss">
+<style scoped lang="scss">
   .search-bar {
     display: inline-block;
     input {
@@ -49,6 +44,11 @@ export default {
       margin: 10px;
       height: 40px;
       width: 650px;
+    }
+    img {
+      width: 40px;
+      height: 40px;
+      vertical-align: middle;
     }
   }
 </style>

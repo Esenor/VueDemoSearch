@@ -2,13 +2,12 @@
  * [pug template]
  */
 <template lang="pug">
-  div(class="item", v-on:click="toggleOpen", v-bind:class="{open: toggle}")
+  div(class="item", v-on:click="toggleInfo")
     img(:src="content.image")
     div(class="header")
-      span
-        span(class="ref", v-text="content.ref")
+      span(class="ref", v-text="content.ref")
       span(class="name", v-text="content.name")
-    transition(name="fade")
+    transition(name="opening")
       div(class="description", v-text="content.description", v-if="toggle")
 </template>
 /**
@@ -23,15 +22,13 @@ export default {
       toggle: false
     }
   },
-  /**
-   * Component methods
-   */
+  // Component methods
   methods: {
     /**
      * Inverse l'état du booléen toggle
      * @return bool
      */
-    toggleOpen: function () {
+    toggleInfo: function () {
       this.toggle = !this.toggle
     }
   }
@@ -48,14 +45,6 @@ export default {
     border-radius: 5px 0px 0px 5px;
     overflow: hidden;
     margin: 10px;
-    &.open {
-      .ref {
-        &:before{
-          color: #ffffff;
-          background: #42b983;
-        }
-      }
-    }
     .header {
       display: inline-block;
       height: 60px;
@@ -83,34 +72,26 @@ export default {
       margin-top: 18px;
       margin-left: 10px;
       display: inline-block;
-      width: 40%;
-      &.name {
-        margin-left: 20px;
-      }
+      width: 38%;
       &.ref {
         padding: 2px 5px 2px 0px;
-        margin: 0px;
-        width: auto;
+        margin-top: 20px;
         font-style: italic;
-        border-radius: 5px;
         font-size: 0.8em;
-        border: 1px solid #ececec;
         overflow: hidden;
         &:before{
           font-style: normal;
           color: #42b983;
-          content: 'ref';
-          background: #ececec;
-          padding: 5px;
-          margin-right: 4px;
+          content: 'ref:';
+          padding: 5px 2px 5px 5px;
         }
       }
     }
-    .fade-enter-active {
+    .opening-enter-active {
       transition: max-height 0.25s ease-in;
       max-height: 500px;
     }
-    .fade-enter, .fade-leave-active {
+    .opening-enter, .opening-leave-active {
       max-height: 0;
     }
   }

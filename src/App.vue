@@ -16,9 +16,7 @@ export default {
   components: {
     ItemGroup
   },
-  /**
-   * Computed methods
-   */
+  // Computed methods
   computed: {
     /**
      * Parse le fichier data.js et retourne le jeu d'éssai
