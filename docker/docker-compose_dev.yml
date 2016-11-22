@@ -1,9 +1,9 @@
 version: '2'
 services:
-  vuejsdemo:
-    container_name: vuejs-demo_dev
-    hostname: vuejs-demo_dev
-    image: vuejs-demo
+  vuedemosearch:
+    container_name: vue-demo-search
+    hostname: vue-demo-search
+    image: vue-demo-search
     build: ..
     ports:
         - "20491:8080"
