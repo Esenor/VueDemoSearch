@@ -52,7 +52,7 @@ export default {
     }
     img {
       vertical-align: bottom;
-      background-color: #42b983;
+      background-color: #ececec;
       width: 60px;
       height: 60px;
     }
@@ -81,7 +81,7 @@ export default {
         overflow: hidden;
         &:before{
           font-style: normal;
-          color: #42b983;
+          color: #000000;
           content: 'ref:';
           padding: 5px 2px 5px 5px;
         }
